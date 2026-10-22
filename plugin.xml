@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="ca-cleversolutions-zebraprinter" version="0.0.5" 
+<plugin id="ca-cleversolutions-zebraprinter" version="0.0.6" 
     xmlns="http://apache.org/cordova/ns/plugins/1.0" 
     xmlns:android="http://schemas.android.com/apk/res/android">
     <name>ZebraPrinter</name>
@@ -40,8 +40,9 @@
         <header-file src="src/ios/ZebraPrinter/lib/include/ZebraPrinterConnection.h" />
         <header-file src="src/ios/ZebraPrinter/lib/include/ZebraPrinterFactory.h" />
         <header-file src="src/ios/ZebraPrinter/lib/include/ZplPrintMode.h" />
-        <!-- ZSDK Library -->
-        <source-file src="src/ios/ZebraPrinter/lib/libZSDK_API.a" framework="true" />
+        <!-- ZSDK Library: XCFramework with an ios-arm64 device slice and an
+             ios-arm64_x86_64-simulator slice (see lib/README.md) -->
+        <framework src="src/ios/ZebraPrinter/lib/ZSDK_API.xcframework" custom="true" embed="false" />
         <!-- Briding File -->
         <header-file src="src/ios/ZebraPrinter/ZebraPrinter-Bridging-Header.h" type="BridgingHeader" />
         <!-- Plugin Source -->
